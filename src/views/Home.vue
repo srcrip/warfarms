@@ -1,8 +1,9 @@
-<template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+<template lang="pug">
+.home
+  //- img(alt="Vue logo" src="../assets/logo.png")
+  h1.title Clanhome
+  h2.subtitle A quiet opening in the undergrowth...
+  // HelloWorld(msg="A quiet opening in the undergrowth...")
 </template>
 
 <script>
