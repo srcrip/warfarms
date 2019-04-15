@@ -34,7 +34,7 @@
             .control
               .tags.has-addons
                 span.tag.is-dark Hours
-                span.tag.is-primary {{ hours }}
+                span.tag.is-primary {{ this.$store.state.hours }}
         .navbar-item
           .buttons
             a.button.is-primary
@@ -42,8 +42,11 @@
               strong End Turn
             a.button.is-light
               | Log in
+
   //- Resources
-  Resources(v-bind='resources')
+  Resources
+  //- Resources(v-bind='resources')
+
   //- Main container
   .container
     .columns
@@ -91,24 +94,15 @@
 
 <script>
 import Resources from  '@/components/Resources.vue'
+import { mapState } from 'vuex'
 
 export default {
   name: 'home',
-  data: function() {
-    return {
-      resources: {
-        men: 14,
-        food: 19,
-        seeds: 100,
-        wood: 1800,
-        metals: 2,
-      },
-      //- 168 hours in 7 days
-      hours: 168
-    }
-  },
   components: {
     Resources
+  },
+  computed: {
+    ...mapState(['resources'])
   },
   methods: {
     endTurn: function () {
