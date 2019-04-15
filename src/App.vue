@@ -11,14 +11,10 @@
         span(aria-hidden='true')
     #navbarBasicExample.navbar-menu
       .navbar-start
-        a.navbar-item
+        router-link(to='/').navbar-item
           | Clanhome
-        a.navbar-item
-          | Documentation
-        a.navbar-item
-          router-link(to='/') Clanhome
-        a.navbar-item
-          router-link(:to='{ name: "forest", props: {season: "Spring" } }') Forest
+        router-link(:to='{ name: "forest", props: {season: "Spring" } }').navbar-item
+          | Forest
         .navbar-item.has-dropdown.is-hoverable
           a.navbar-link
             | More
